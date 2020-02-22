@@ -3,4 +3,12 @@
     <string name="preeliminatorylabs">PreeliminatoryLabs</string>
     <string name="from">from</string>
     <string name="image_description">Splash Screen Image</string>
+    <string name="backlog">Registro de Actividad</string>
+    <string name="get_clients">Informacion de Clientes</string>
+    <string name="post_clients">Registro de Clientes</string>
+    <string name="put_clients">Actualizar Registros</string>
+    <string name="about">Información de uso</string>
+    <string name="dev_email">cdmejiam94@gmail.com</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

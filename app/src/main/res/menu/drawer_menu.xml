@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/imc_calculator"
+            android:title="@string/app_name"
+            android:icon="@drawable/ic_imc_calculator"/>
+
+        <item
+            android:id="@+id/get_clients"
+            android:title="@string/get_clients"
+            android:icon="@drawable/ic_get_clients"/>
+
+        <item
+            android:id="@+id/post_clients"
+            android:title="@string/post_clients"
+            android:icon="@drawable/ic_add_client"/>
+
+        <item
+            android:id="@+id/put_clients"
+            android:title="@string/put_clients"
+            android:icon="@drawable/ic_imc_calculator"/>
+
+    </group>
+
+    <item android:title="@string/about">
+
+        <menu>
+
+            <item
+                android:id="@+id/backlog"
+                android:title="@string/backlog"
+                android:icon="@drawable/ic_backlog"/>
+
+        </menu>
+
+    </item>
+
+</menu>
