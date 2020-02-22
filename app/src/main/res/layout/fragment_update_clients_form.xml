@@ -1,11 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update Clients"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edtUpdateGEB"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_geb"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/btnUpdateClient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtUpdateWeight" />
+
+        <EditText
+            android:id="@+id/edtUpdateWeight"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_weight"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/edtUpdateGEB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtUpdateHeight" />
+
+        <EditText
+            android:id="@+id/edtUpdateHeight"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_height"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/edtUpdateWeight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtUpdateAge" />
+
+        <EditText
+            android:id="@+id/edtUpdateAge"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_age"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/edtUpdateHeight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtClientId" />
+
+        <TextView
+            android:id="@+id/txtUpdateClientLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_client_main_label"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/main_label_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtClientId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edtClientId"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/hint_id_client"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@+id/edtUpdateAge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtUpdateClientLabel" />
+
+        <Button
+            android:id="@+id/btnUpdateClient"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="@string/btn_update_clients"
+            android:textColor="@color/white"
+            android:textSize="@dimen/btn_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtUpdateGEB" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

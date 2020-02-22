@@ -4,4 +4,7 @@
     <dimen name="nav_header_padding">8dp</dimen>
     <dimen name="nav_header_img_dimens">80dp</dimen>
     <dimen name="nav_header_title_size">16sp</dimen>
+    <dimen name="main_label_size">30sp</dimen>
+    <dimen name="edit_text_width">300dp</dimen>
+    <dimen name="btn_text_size">18sp</dimen>
 </resources>

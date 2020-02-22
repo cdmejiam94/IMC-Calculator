@@ -11,4 +11,21 @@
     <string name="dev_email">cdmejiam94@gmail.com</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="imc_calculator_main_label">Calcule su IMC</string>
+    <string name="hint_name">Ingrese su Nombre</string>
+    <string name="hint_age">Ingrese su edad</string>
+    <string name="hint_weight">Ingrese su peso (KG)</string>
+    <string name="hint_genre">Ingrese su género (H o M)</string>
+    <string name="hint_height">Ingrese su altura (mts)</string>
+    <string name="btn_calculate_imc">Calcular</string>
+    <string name="post_clients_main_label">Registro</string>
+    <string name="hint_last_name">Ingrese sus Apellidos</string>
+    <string name="hint_user_name">Ingrese su nombre de usuario</string>
+    <string name="hint_email">Ingrese su correo</string>
+    <string name="hint_password">Ingrese su contraseña</string>
+    <string name="hint_geb">Gasto Energético Bruto (GEB)</string>
+    <string name="btn_update_clients">Actualizar</string>
+    <string name="hint_id_client">Ingrese el Id del usuario</string>
+    <string name="update_client_main_label">Actualizar Registro</string>
+    <string name="btn_add_client">Enviar</string>
 </resources>
