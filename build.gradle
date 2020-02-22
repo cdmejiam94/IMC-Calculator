@@ -1,15 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.3.61'
     repositories {
         google()
         jcenter()
-        
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -26,3 +25,28 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    kotlin_version      = '1.3.61'
+    appCompact          = '1.1.0'
+    androidxCore        = '1.2.0'
+    constraintLayout    = '1.1.3'
+    navigationFragment  = '1.0.0-alpha08'
+    lifecycleExtensions = '2.1.0'
+    lifecycleExtensions = '2.2.0'
+    rxAndroid           = '2.1.1'
+    rxJava              = '2.1.3'
+    rxKotlin            = '2.3.0'
+    retrofit2           = '2.1.0'
+    rxAdapter           = '2.3.0'
+    gson                = '2.6.1'
+    room_version        = '2.2.3'
+    lottieVersion       = '2.8.0'
+    cardview            = '1.0.0'
+    materialDesign      = '1.0.0'
+    junit               = '4.12'
+    testJunit           = '1.1.1'
+    espresso            = '3.2.0'
+    glide               = '4.11.0'
+}
+
