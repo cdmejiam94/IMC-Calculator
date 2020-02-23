@@ -12,6 +12,8 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedListener  {
 
+    /*dataBinding*/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

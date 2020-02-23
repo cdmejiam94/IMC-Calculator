@@ -22,6 +22,8 @@ class FragmentIMC : Fragment() {
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_imc, container, false)
+
+        //Boton.listener
         return root
 
     }
