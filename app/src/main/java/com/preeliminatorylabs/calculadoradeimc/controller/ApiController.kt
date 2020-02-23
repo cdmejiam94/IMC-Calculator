@@ -21,7 +21,8 @@ class ApiController {
             true
         }.onErrorReturn {
             val error: HttpException = it as HttpException
-            Log.e("Error","HTTP: " + error.code() + " " + error.message() + " Body:" + (error.response().errorBody()?.string() ?: ""))
+            Log.e("Error","HTTP: " + error.code() + " " + error.message() +
+                    " Body:" + (error.response().errorBody()?.string() ?: ""))
             false
         }
     }
