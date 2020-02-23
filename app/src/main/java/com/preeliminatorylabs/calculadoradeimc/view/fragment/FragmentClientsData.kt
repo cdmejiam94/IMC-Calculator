@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.controller.ApiController
-import com.preeliminatorylabs.calculadoradeimc.service.request.ClientsRegisterRequest
 import com.preeliminatorylabs.calculadoradeimc.view.adapter.ClientDataAdapter
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentClientsDataViewModel
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentClientsDataViewModelFactory
@@ -22,13 +21,6 @@ class FragmentClientsData : Fragment() {
     private lateinit var clientsDataViewModel: FragmentClientsDataViewModel
 
     private lateinit var clientsRecyclerView: RecyclerView
-
-    /*val binding : FragmentClientsDataBinding by lazy{
-        DataBindingUtil.setContentView<FragmentClientsDataBinding>(
-            activity as Activity,
-            R.layout.fragment_clients_data
-        )
-    }*/
 
     companion object {
         fun newInstance() : Fragment {
@@ -60,8 +52,6 @@ class FragmentClientsData : Fragment() {
         })
 
         clientsDataViewModel.getClients()
-
-        clientsDataViewModel.postClients(ClientsRegisterRequest("Carlos","Mejia","carMej","a@mc","123456"))
 
         return root
 

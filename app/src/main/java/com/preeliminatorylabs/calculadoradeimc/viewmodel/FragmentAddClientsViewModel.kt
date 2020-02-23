@@ -10,29 +10,24 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class FragmentClientsDataViewModel(val controller: ApiController) :  ViewModel(){
-
+class FragmentAddClientsViewModel(val controller : ApiController) : ViewModel() {
     val compositeDisposable = CompositeDisposable()
 
-    val results: MutableLiveData<List<Client>> = MutableLiveData()
+    val results: MutableLiveData<Boolean> = MutableLiveData()
 
-    //Otro liveData
-
-    fun getClients(){
+    fun postClients(clientsRegisterRequest: ClientsRegisterRequest){
 
         compositeDisposable.add(
 
             //Subscribe solo se hace en el viewmodel porque esta apegado al ciclo de vida
-            controller.getClientsApi()
+            controller.postClientApi(clientsRegisterRequest)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ items ->
-                    results.value = items
-                    //Llamar addLog
+                .subscribe({
+                    results.value = it
                 }, {
                     it.printStackTrace()
                 })
-
         )
     }
 
@@ -45,6 +40,4 @@ class FragmentClientsDataViewModel(val controller: ApiController) :  ViewModel()
         compositeDisposable.clear()
         super.onCleared()
     }
-
-
 }
