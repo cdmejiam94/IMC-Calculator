@@ -4,6 +4,7 @@ import android.util.Log
 import com.preeliminatorylabs.calculadoradeimc.model.Client
 import com.preeliminatorylabs.calculadoradeimc.service.ApiClient
 import com.preeliminatorylabs.calculadoradeimc.service.request.ClientsRegisterRequest
+import com.preeliminatorylabs.calculadoradeimc.service.request.ClientsUpdateRequest
 import io.reactivex.Single
 import retrofit2.HttpException
 
@@ -18,6 +19,17 @@ class ApiController {
 
     fun postClientApi(clientsRegisterRequest: ClientsRegisterRequest): Single<Boolean> {
         return service.postClients(clientsRegisterRequest).map {
+            true
+        }.onErrorReturn {
+            val error: HttpException = it as HttpException
+            Log.e("Error","HTTP: " + error.code() + " " + error.message() +
+                    " Body:" + (error.response().errorBody()?.string() ?: ""))
+            false
+        }
+    }
+
+    fun updateClientApi(id: Int, clientsUpdateRequest: ClientsUpdateRequest): Single<Boolean> {
+        return service.updateClients(id, clientsUpdateRequest).map {
             true
         }.onErrorReturn {
             val error: HttpException = it as HttpException
