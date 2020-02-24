@@ -1,6 +1,7 @@
 package com.preeliminatorylabs.calculadoradeimc.view.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,6 @@ import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
 
 class AppDataAdapter(val list: List<AppData>, val context: Context) : RecyclerView.Adapter<AppDataAdapter.ViewHolder>() {
 
-    // Inflates the item views
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.backlog_item, parent, false)
         return ViewHolder(v)
@@ -21,20 +21,29 @@ class AppDataAdapter(val list: List<AppData>, val context: Context) : RecyclerVi
         return list.size
     }
 
-    // Binds each animal in the ArrayList to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.type.text = list[position].type
+        holder.type.text = list[position].type
         holder.name.text = list[position].first_name
-//        holder.age.text = list[position].age.toString()
-//        holder.genre.text = list[position].gender.toString()
-//        holder.height.text = list[position].height.toString()
-//        holder.weight.text = list[position].weight.toString()
-//        holder.user.text = list[position].user_name
-//        holder.password.text = list[position].password
-//        holder.email.text = list[position].email
-//        holder.lastName.text = list[position].last_name
-//        holder.geb.text = list[position].geb.toString()
-//        holder.id_client.text = list[position].id_client.toString()
+        holder.age.text = list[position].age.toString()
+        holder.genre.text = list[position].gender.toString()
+        holder.height.text = list[position].height.toString()
+        holder.weight.text = list[position].weight.toString()
+        holder.user.text = list[position].user_name
+        holder.password.text = list[position].password
+        holder.email.text = list[position].email
+        holder.lastName.text = list[position].last_name
+        holder.geb.text = list[position].geb.toString()
+        holder.id_client.text = list[position].id_client.toString()
+        holder.type.setTextColor(Color.parseColor(setItemColor(holder.type)))
+    }
+
+    fun setItemColor(textView: TextView) : String{
+        return when(textView.text){
+            "GET" -> "#FFFFFF"
+            "POST" -> "#58D68D"
+            "PUT" -> "#EC7063"
+            else -> "#D35400"
+        }
     }
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {

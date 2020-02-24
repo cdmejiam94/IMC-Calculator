@@ -1,10 +1,13 @@
 package com.preeliminatorylabs.calculadoradeimc.viewmodel
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.preeliminatorylabs.calculadoradeimc.controller.ApiController
 import com.preeliminatorylabs.calculadoradeimc.model.Client
+import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
+import com.preeliminatorylabs.calculadoradeimc.repository.AppDataRepository
 import com.preeliminatorylabs.calculadoradeimc.service.request.ClientsRegisterRequest
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -36,8 +39,9 @@ class FragmentClientsDataViewModel(val controller: ApiController) :  ViewModel()
         )
     }
 
-    fun addLog(listItems : List<Client>){
-
+    fun addItemData(appData: AppData, context: Context){
+        val repository = AppDataRepository(context)
+        repository.insert(appData)
     }
 
     //Memory leaks

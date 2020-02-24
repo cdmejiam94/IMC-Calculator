@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.controller.ApiController
+import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
 import com.preeliminatorylabs.calculadoradeimc.view.adapter.ClientDataAdapter
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentClientsDataViewModel
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentClientsDataViewModelFactory
@@ -48,7 +49,9 @@ class FragmentClientsData : Fragment() {
         clientsDataViewModel.results.observe(viewLifecycleOwner, Observer { items ->
             val clientsAdapter = ClientDataAdapter(items, activity as Context)
             clientsRecyclerView.adapter = clientsAdapter
-            clientsDataViewModel.addLog(items)
+            clientsDataViewModel.addItemData(
+                AppData("GET","Listado de Clientes"
+                ),activity?.applicationContext!!)
         })
 
         clientsDataViewModel.getClients()

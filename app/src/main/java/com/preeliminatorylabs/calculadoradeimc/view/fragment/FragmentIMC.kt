@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.controller.IMCController
 import com.preeliminatorylabs.calculadoradeimc.model.Persona
+import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentClientsDataViewModelFactory
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentIMCViewModel
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentIMCViewModelFactory
@@ -70,11 +71,17 @@ class FragmentIMC : Fragment() {
                 weight.text.toString().toDouble(),
                 height.text.toString().toDouble()
                 )
-        ) }
+            )
 
-
+            imcViewModel.addItemData(AppData("IMC",name.text.toString(),
+                "",
+                age.text.toString().toInt(),
+                gender.text[0],
+                weight.text.toString().toDouble(),
+                height.text.toString().toDouble()
+            ),activity?.applicationContext!!)
+        }
 
         return root
-
     }
 }

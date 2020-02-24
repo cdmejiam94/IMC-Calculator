@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.controller.ApiController
+import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
 import com.preeliminatorylabs.calculadoradeimc.service.request.ClientsUpdateRequest
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentUpdateClientsViewModel
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentUpdateClientsViewModelFactory
@@ -64,14 +65,27 @@ class FragmentUpdateClients : Fragment() {
         })
 
         btnUpdate.setOnClickListener { updateClientsViewModel.updateClients(
-            id.text.toString().toInt(),
-            ClientsUpdateRequest (
-                age.text.toString().toInt(),
-                heigth.text.toString().toDouble(),
-                weight.text.toString().toDouble(),
-                geb.text.toString().toDouble()
+                id.text.toString().toInt(),
+                ClientsUpdateRequest (
+                    age.text.toString().toInt(),
+                    heigth.text.toString().toDouble(),
+                    weight.text.toString().toDouble(),
+                    geb.text.toString().toDouble()
+                )
             )
-        ) }
+
+            updateClientsViewModel.addItemData(
+                AppData("PUT","",
+                    "",
+                    age.text.toString().toInt(),
+                    'x',
+                    weight.text.toString().toDouble(),
+                    heigth.text.toString().toDouble(),
+                    "","","",
+                    id.text.toString().toInt(),
+                    geb.text.toString().toDouble()
+                ),activity?.applicationContext!!)
+        }
 
         return root
 

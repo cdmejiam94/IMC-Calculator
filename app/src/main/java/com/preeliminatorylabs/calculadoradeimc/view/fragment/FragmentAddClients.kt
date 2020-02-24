@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.controller.ApiController
 import com.preeliminatorylabs.calculadoradeimc.model.Persona
+import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
 import com.preeliminatorylabs.calculadoradeimc.service.request.ClientsRegisterRequest
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentAddClientsViewModel
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentAddClientsViewModelFactory
@@ -66,13 +67,23 @@ class FragmentAddClients : Fragment() {
         })
 
         btnPost.setOnClickListener { addClientViewModel.postClients(
-            ClientsRegisterRequest(first_name.text.toString(),
-                last_name.text.toString(),
-                user_name.text.toString(),
-                email.text.toString(),
-                password.text.toString()
+                ClientsRegisterRequest(first_name.text.toString(),
+                    last_name.text.toString(),
+                    user_name.text.toString(),
+                    email.text.toString(),
+                    password.text.toString()
+                )
             )
-        ) }
+
+            addClientViewModel.addItemData(
+                AppData("POST",first_name.text.toString(),
+                    last_name.text.toString(),
+                    0,'x',0.0,0.0,
+                    user_name.text.toString(),email.text.toString(),
+                    password.text.toString()
+                ),activity?.applicationContext!!)
+
+        }
 
         return root
 

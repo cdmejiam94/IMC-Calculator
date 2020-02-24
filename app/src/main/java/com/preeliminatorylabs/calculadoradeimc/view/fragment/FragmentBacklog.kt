@@ -40,26 +40,15 @@ class FragmentBacklog : Fragment() {
 
         backlogRecyclerView = root.findViewById(R.id.recyclerBacklog)
 
-        backlogRecyclerView.layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL,false)
-
-        /*backlogViewModel = run {
-            ViewModelProviders.of(requireActivity()).get(FragmentBacklogViewModel::class.java)
-        }*/
+        backlogRecyclerView.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL,false)
 
         activity?.let {
             backlogViewModel = ViewModelProviders.of(it).get(FragmentBacklogViewModel::class.java)
         }
 
-        addItemData()
-        addItemData()
-        addItemData()
-        addItemData()
-
         getData()
 
         backlogViewModel.getDataRepository(activity?.applicationContext!!,viewLifecycleOwner)
-
-//        backlogViewModel.appData.observe(viewLifecycleOwner,observer)
 
         return root
 
@@ -70,16 +59,9 @@ class FragmentBacklog : Fragment() {
     }
 
     fun getData(){
-        val observer = Observer<List<AppData>> {logs ->
-            logs.forEach{
-                Log.e("MSG", "======================= : " +
-                        it.type +
-                        " " +
-                        it.first_name)
-            }
-            val backlogAdapter = AppDataAdapter(logs, activity as Context)
+        val observer = Observer<List<AppData>> {items ->
+            val backlogAdapter = AppDataAdapter(items, activity as Context)
             backlogRecyclerView.adapter = backlogAdapter
-
         }
         backlogViewModel.getData.observe(viewLifecycleOwner, observer)
     }

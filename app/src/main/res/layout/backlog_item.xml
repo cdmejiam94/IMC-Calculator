@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="8dp"
     app:cardBackgroundColor="@color/card_bg_color">
 
@@ -11,159 +11,267 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/blId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ID"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.062"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.042" />
-
-        <TextView
-            android:id="@+id/blType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TIPO USO"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.885"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.44" />
-
-        <TextView
             android:id="@+id/blName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="NOMBRE(S)"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.922"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.654" />
+            app:layout_constraintStart_toEndOf="@+id/txtBacklogLabel4"
+            app:layout_constraintTop_toBottomOf="@+id/blIdClient" />
 
         <TextView
             android:id="@+id/blLast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="APELLIDO(S)"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.251"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.768" />
+            app:layout_constraintStart_toEndOf="@+id/txtBacklogLabel5"
+            app:layout_constraintTop_toBottomOf="@+id/blName" />
 
         <TextView
             android:id="@+id/blAge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="44dp"
             android:text="EDAD"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.343"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.696" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/blGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="36dp"
             android:text="GENERO"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.795"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.84" />
+            app:layout_constraintTop_toBottomOf="@+id/blGeb" />
 
         <TextView
             android:id="@+id/blWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="56dp"
             android:text="PESO"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.538"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.71" />
+            app:layout_constraintTop_toBottomOf="@+id/blGenre" />
 
         <TextView
             android:id="@+id/blHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="28dp"
             android:text="ALTURA"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.169"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.363" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/blUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="USUARIO"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/txtBacklogLabel6"
+            app:layout_constraintTop_toBottomOf="@+id/blLast" />
 
         <TextView
             android:id="@+id/blEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="EMAIL"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.113"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.623" />
+            app:layout_constraintStart_toStartOf="@+id/txtBacklogLabel8"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel8" />
 
         <TextView
             android:id="@+id/blPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
             android:text="CONTRASEÑA"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.13"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.301" />
+            app:layout_constraintStart_toEndOf="@+id/txtBacklogLabel7"
+            app:layout_constraintTop_toBottomOf="@+id/blUser" />
 
         <TextView
             android:id="@+id/blIdClient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="ID CLIENTE"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.123"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.184" />
+            app:layout_constraintStart_toEndOf="@+id/txtBacklogLabel3"
+            app:layout_constraintTop_toBottomOf="@+id/blId" />
 
         <TextView
             android:id="@+id/blGeb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="56dp"
             android:text="GEB"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.737"
+            app:layout_constraintTop_toBottomOf="@+id/blHeight" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="8dp"
+            android:text="ID:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.215" />
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel2" />
+
+        <TextView
+            android:id="@+id/blType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="TIPO USO"
+            app:layout_constraintStart_toEndOf="@+id/txtBacklogLabel2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/blId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="ID"
+            app:layout_constraintStart_toEndOf="@+id/txtBacklogLabel"
+            app:layout_constraintTop_toBottomOf="@+id/blType" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="TIPO DE USO:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="8dp"
+            android:text="ID CLIENTE:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Nombre(s):"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel3" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Apellido(s):"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel4" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:text="Usuario:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel5" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Contraseña:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel6" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="144dp"
+            android:text="Correo:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="8dp"
+            android:text="Edad:"
+            app:layout_constraintEnd_toStartOf="@+id/blAge"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Género:"
+            app:layout_constraintEnd_toStartOf="@+id/blGenre"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel11" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Altura:"
+            app:layout_constraintEnd_toStartOf="@+id/blHeight"
+            app:layout_constraintHorizontal_bias="0.811"
+            app:layout_constraintStart_toStartOf="@+id/txtBacklogLabel9"
+            app:layout_constraintTop_toBottomOf="@+id/blAge" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="GEB:"
+            app:layout_constraintEnd_toStartOf="@+id/blGeb"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="@+id/txtBacklogLabel10"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel10" />
+
+        <TextView
+            android:id="@+id/txtBacklogLabel13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Peso:"
+            app:layout_constraintEnd_toStartOf="@+id/blWeight"
+            app:layout_constraintTop_toBottomOf="@+id/txtBacklogLabel12" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
