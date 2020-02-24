@@ -86,8 +86,6 @@ class FragmentUpdateClients : Fragment() {
                     geb.text.toString().toDouble()
                 ),activity?.applicationContext!!)
         }
-
         return root
-
     }
 }

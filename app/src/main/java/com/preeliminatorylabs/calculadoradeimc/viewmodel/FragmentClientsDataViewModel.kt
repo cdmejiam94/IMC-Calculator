@@ -19,19 +19,14 @@ class FragmentClientsDataViewModel(val controller: ApiController) :  ViewModel()
 
     val results: MutableLiveData<List<Client>> = MutableLiveData()
 
-    //Otro liveData
-
     fun getClients(){
 
         compositeDisposable.add(
-
-            //Subscribe solo se hace en el viewmodel porque esta apegado al ciclo de vida
             controller.getClientsApi()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ items ->
                     results.value = items
-                    //Llamar addLog
                 }, {
                     it.printStackTrace()
                 })
@@ -44,7 +39,6 @@ class FragmentClientsDataViewModel(val controller: ApiController) :  ViewModel()
         repository.insert(appData)
     }
 
-    //Memory leaks
     override fun onCleared() {
         compositeDisposable.clear()
         super.onCleared()

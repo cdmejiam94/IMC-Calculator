@@ -1,13 +1,11 @@
 package com.preeliminatorylabs.calculadoradeimc.view.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -16,7 +14,6 @@ import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.controller.IMCController
 import com.preeliminatorylabs.calculadoradeimc.model.Persona
 import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
-import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentClientsDataViewModelFactory
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentIMCViewModel
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentIMCViewModelFactory
 

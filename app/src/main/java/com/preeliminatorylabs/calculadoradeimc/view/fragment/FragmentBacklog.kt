@@ -2,7 +2,6 @@ package com.preeliminatorylabs.calculadoradeimc.view.fragment
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,9 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
-import com.preeliminatorylabs.calculadoradeimc.view.activity.MainActivity
 import com.preeliminatorylabs.calculadoradeimc.view.adapter.AppDataAdapter
-import com.preeliminatorylabs.calculadoradeimc.view.adapter.ClientDataAdapter
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentBacklogViewModel
 
 class FragmentBacklog : Fragment() {

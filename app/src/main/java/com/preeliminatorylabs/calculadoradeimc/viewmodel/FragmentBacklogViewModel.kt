@@ -1,6 +1,5 @@
 package com.preeliminatorylabs.calculadoradeimc.viewmodel
 
-import android.app.Application
 import android.content.Context
 import androidx.lifecycle.*
 import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
@@ -10,7 +9,6 @@ class FragmentBacklogViewModel : ViewModel() {
 
     val getData : MutableLiveData<List<AppData>> = MutableLiveData()
 
-    //Dar de alta en otro viewmodel
     fun addItemData(appData: AppData, context: Context){
         val repository = AppDataRepository(context)
         repository.insert(appData)

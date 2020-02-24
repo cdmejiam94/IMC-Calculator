@@ -1,13 +1,11 @@
 package com.preeliminatorylabs.calculadoradeimc.persistance
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.preeliminatorylabs.calculadoradeimc.persistance.dao.AppDataDao
 import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
-import com.preeliminatorylabs.calculadoradeimc.view.fragment.FragmentBacklog
 
 @Database(entities = [AppData::class], version = 1)
 abstract class AppDataDataBase : RoomDatabase() {

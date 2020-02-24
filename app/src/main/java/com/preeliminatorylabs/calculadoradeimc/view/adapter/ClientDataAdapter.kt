@@ -11,7 +11,6 @@ import com.preeliminatorylabs.calculadoradeimc.model.Client
 
 class ClientDataAdapter (val list: List<Client>, val context: Context) : RecyclerView.Adapter<ClientDataAdapter.ViewHolder>() {
 
-    // Inflates the item views
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.client_item, parent, false)
         return ViewHolder(v)
@@ -21,7 +20,6 @@ class ClientDataAdapter (val list: List<Client>, val context: Context) : Recycle
         return list.size
     }
 
-    // Binds each animal in the ArrayList to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.idClient.text = list[position].client_id.toString()
         holder.userName.text = list[position].user_name

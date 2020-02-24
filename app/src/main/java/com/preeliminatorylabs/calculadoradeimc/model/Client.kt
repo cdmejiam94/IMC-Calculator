@@ -30,5 +30,4 @@ data class Client (
     @SerializedName("Usuario_ID") val user_id : Int = 0,
     @SerializedName("Visible") val visibility : Boolean = true,
     @SerializedName("De_Sistema") val from_system : Boolean = true
-
 )

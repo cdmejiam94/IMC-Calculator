@@ -12,8 +12,6 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedListener  {
 
-    /*dataBinding*/
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,18 +26,14 @@ class MainActivity : ActivityBase(), NavigationView.OnNavigationItemSelectedList
             toolBar,
             (R.string.open),
             (R.string.close)
-        ) {
-
+            ) {
         }
 
         drawerToggle.isDrawerIndicatorEnabled = true
         drawer_layout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
-
         nav_view.setNavigationItemSelectedListener(this)
-
         navigateToFragment(FragmentIMC.newInstance())
-
     }
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {

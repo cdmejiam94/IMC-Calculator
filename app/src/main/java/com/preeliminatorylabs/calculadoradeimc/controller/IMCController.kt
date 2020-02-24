@@ -6,25 +6,30 @@ import com.preeliminatorylabs.calculadoradeimc.model.Persona
 class IMCController {
 
     fun getResults(persona: Persona) : Persona {
-        if (persona.esMayorDeEdad()){
-            persona.setAdult("Es mayor de edad")
-        } else {
-            persona.setAdult("No es mayor de edad")
-        }
+        persona.setAdult(getAdultStatus(persona))
+        persona.setStatusIMC(getIMCStatus(persona))
+        return persona
+    }
 
+    fun getAdultStatus(persona: Persona) : String {
+        if (persona.esMayorDeEdad()){
+            return "Es mayor de edad"
+        } else {
+            return "No es mayor de edad"
+        }
+    }
+
+    fun getIMCStatus(persona: Persona) : String{
         when(persona.calcularIMC()){
             -1 -> {
-                persona.setStatusIMC(IMC_Table.FALTA_PESO.toString())
+                return IMC_Table.FALTA_PESO.toString()
             }
             0 -> {
-                persona.setStatusIMC(IMC_Table.PESO_NORMAL.toString())
+                return IMC_Table.PESO_NORMAL.toString()
             }
             else -> {
-                persona.setStatusIMC(IMC_Table.SOBREPESO.toString())
+                return IMC_Table.SOBREPESO.toString()
             }
         }
-
-        return persona
-
     }
 }

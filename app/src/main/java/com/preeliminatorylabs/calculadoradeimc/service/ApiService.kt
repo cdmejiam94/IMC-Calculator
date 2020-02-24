@@ -8,7 +8,6 @@ import io.reactivex.Single
 import retrofit2.http.*
 
 interface ApiService {
-
     @GET("NutriNET/Cliente")
     fun getClients(): Single<List<Client>>
 
@@ -20,5 +19,4 @@ interface ApiService {
         @Path("id") id : Int = 0,
         @Body clientsUpdateRequest: ClientsUpdateRequest
     ): Single<List<MessagesResponse>>
-
 }

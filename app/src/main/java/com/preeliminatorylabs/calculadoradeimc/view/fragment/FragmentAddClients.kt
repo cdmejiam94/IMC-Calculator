@@ -9,11 +9,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
 import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.controller.ApiController
-import com.preeliminatorylabs.calculadoradeimc.model.Persona
 import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
 import com.preeliminatorylabs.calculadoradeimc.service.request.ClientsRegisterRequest
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentAddClientsViewModel
@@ -84,8 +82,6 @@ class FragmentAddClients : Fragment() {
                 ),activity?.applicationContext!!)
 
         }
-
         return root
-
     }
 }
