@@ -13,7 +13,7 @@ class AppDataAdapter(val list: List<AppData>, val context: Context) : RecyclerVi
 
     // Inflates the item views
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.client_item, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.backlog_item, parent, false)
         return ViewHolder(v)
     }
 
@@ -23,24 +23,21 @@ class AppDataAdapter(val list: List<AppData>, val context: Context) : RecyclerVi
 
     // Binds each animal in the ArrayList to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.id.text = list[position].log_id.toString()
-        holder.type.text = list[position].type
+//        holder.type.text = list[position].type
         holder.name.text = list[position].first_name
-        holder.age.text = list[position].age.toString()
-        holder.genre.text = list[position].gender.toString()
-        holder.height.text = list[position].height.toString()
-        holder.weight.text = list[position].weight.toString()
-        holder.user.text = list[position].user_name
-        holder.password.text = list[position].password
-        holder.email.text = list[position].email
-        holder.lastName.text = list[position].last_name
-        holder.geb.text = list[position].geb.toString()
-        holder.id_client.text = list[position].id_client.toString()
+//        holder.age.text = list[position].age.toString()
+//        holder.genre.text = list[position].gender.toString()
+//        holder.height.text = list[position].height.toString()
+//        holder.weight.text = list[position].weight.toString()
+//        holder.user.text = list[position].user_name
+//        holder.password.text = list[position].password
+//        holder.email.text = list[position].email
+//        holder.lastName.text = list[position].last_name
+//        holder.geb.text = list[position].geb.toString()
+//        holder.id_client.text = list[position].id_client.toString()
     }
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        val id = itemView.findViewById<TextView>(R.id.blId)
         val type = itemView.findViewById<TextView>(R.id.blType)
         val name = itemView.findViewById<TextView>(R.id.blName)
         val lastName = itemView.findViewById<TextView>(R.id.blLast)

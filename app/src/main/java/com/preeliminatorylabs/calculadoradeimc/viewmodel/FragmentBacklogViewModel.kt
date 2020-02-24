@@ -1,19 +1,25 @@
 package com.preeliminatorylabs.calculadoradeimc.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
+import android.content.Context
+import androidx.lifecycle.*
 import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
 import com.preeliminatorylabs.calculadoradeimc.repository.AppDataRepository
-import com.preeliminatorylabs.calculadoradeimc.view.fragment.FragmentBacklog
 
-class FragmentBacklogViewModel (fragmentBacklog: FragmentBacklog) : ViewModel() {
+class FragmentBacklogViewModel : ViewModel() {
 
-    private val repository = AppDataRepository(fragmentBacklog)
+    val getData : MutableLiveData<List<AppData>> = MutableLiveData()
 
-    val appData = repository.getOrderedBacklogLiveData()
-
-    fun saveData(appData: AppData){
+    //Dar de alta en otro viewmodel
+    fun addItemData(appData: AppData, context: Context){
+        val repository = AppDataRepository(context)
         repository.insert(appData)
+    }
+
+    fun getDataRepository(context: Context, lifecycleOwner: LifecycleOwner){
+        val repository = AppDataRepository(context)
+        repository.getOrderedBacklogLiveData().observe(lifecycleOwner, Observer {
+            getData.value = it
+        })
     }
 }

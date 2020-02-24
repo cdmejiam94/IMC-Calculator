@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.preeliminatorylabs.calculadoradeimc.R
 import com.preeliminatorylabs.calculadoradeimc.persistance.entity.AppData
+import com.preeliminatorylabs.calculadoradeimc.view.activity.MainActivity
 import com.preeliminatorylabs.calculadoradeimc.view.adapter.AppDataAdapter
 import com.preeliminatorylabs.calculadoradeimc.view.adapter.ClientDataAdapter
 import com.preeliminatorylabs.calculadoradeimc.viewmodel.FragmentBacklogViewModel
@@ -41,27 +42,45 @@ class FragmentBacklog : Fragment() {
 
         backlogRecyclerView.layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL,false)
 
-        backlogViewModel.appData.observe(viewLifecycleOwner, Observer { items ->
-            val backlogAdapter = AppDataAdapter(items, activity as Context)
-            backlogRecyclerView.adapter = backlogAdapter
-            //Llamada a repository
-        })
+        /*backlogViewModel = run {
+            ViewModelProviders.of(requireActivity()).get(FragmentBacklogViewModel::class.java)
+        }*/
 
-        //crear instancia del viewModel
-
-        val observer = Observer<List<AppData>> {appData ->
-            appData.forEach{
-                Log.e("MSG", appData.toString())
-            }
+        activity?.let {
+            backlogViewModel = ViewModelProviders.of(it).get(FragmentBacklogViewModel::class.java)
         }
 
-        backlogViewModel.appData.observe(viewLifecycleOwner,observer)
+        addItemData()
+        addItemData()
+        addItemData()
+        addItemData()
+
+        getData()
+
+        backlogViewModel.getDataRepository(activity?.applicationContext!!,viewLifecycleOwner)
+
+//        backlogViewModel.appData.observe(viewLifecycleOwner,observer)
 
         return root
 
     }
 
-    fun addAppData(){
-        backlogViewModel.saveData(AppData("IMC","Carlos"))
+    fun addItemData(){
+        backlogViewModel.addItemData(AppData("IMC","Carlos"),activity?.applicationContext!!)
+    }
+
+    fun getData(){
+        val observer = Observer<List<AppData>> {logs ->
+            logs.forEach{
+                Log.e("MSG", "======================= : " +
+                        it.type +
+                        " " +
+                        it.first_name)
+            }
+            val backlogAdapter = AppDataAdapter(logs, activity as Context)
+            backlogRecyclerView.adapter = backlogAdapter
+
+        }
+        backlogViewModel.getData.observe(viewLifecycleOwner, observer)
     }
 }

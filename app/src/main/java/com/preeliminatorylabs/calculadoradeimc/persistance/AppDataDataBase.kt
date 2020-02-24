@@ -1,5 +1,7 @@
 package com.preeliminatorylabs.calculadoradeimc.persistance
 
+import android.app.Application
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -17,10 +19,10 @@ abstract class AppDataDataBase : RoomDatabase() {
         @Volatile
         private var INSTANCE: AppDataDataBase? = null
 
-        fun getInstance(context: FragmentBacklog): AppDataDataBase? {
+        fun getInstance(context: Context): AppDataDataBase? {
             INSTANCE ?: synchronized(this) {
                 INSTANCE = Room.databaseBuilder(
-                    context.requireContext(),
+                    context.applicationContext,
                     AppDataDataBase::class.java,
                     DATABASE_NAME
                 ).build()
